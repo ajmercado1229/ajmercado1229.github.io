@@ -24,20 +24,20 @@ Next the ledger accounts are listed based on what Financial Statement accounts w
 
 This part of the schedule holds the quantitative data of the assets. As you can see, only a few fields need to be manually entered when setting up a new asset. This information will be used in the formulas of other fields for calculation.
 
-⋅⋅*	Depreciation Status : uses formula to determine status
-⋅⋅*	Fully Depreciated : IF End of Life < = Current Month End Date
-⋅⋅*	Depreciating : IF End of Life > Current Month End Date
-⋅⋅*	Ending Depreciation : IF End of Life is during the Current Month
-⋅⋅*	Fiscal Month : **_manually enter_**
-⋅⋅*	Beg of Life : uses VLOOKUP to determine start of Fiscal Month
-⋅⋅*	End of Life = Beg of Life + (365 * Years)
-⋅⋅*	Years : **_manually enter_**
-⋅⋅*	Weeks = Years * 52
-⋅⋅*	Weeks in service = (Current Fiscal Month – Beg of Life) / 7
-⋅⋅*	Weekly Depreciation = Acquisition Cost / Weeks
-⋅⋅*	Acquisition Cost : **_manually enter_**
-⋅⋅*	Accumulated Depreciation Total: Sum of all YTD depreciation
-⋅⋅*	NBV (Net Book Value) = Acquisition Cost – Accumulated Depreciation Total
+*	Depreciation Status : uses formula to determine status
+*	Fully Depreciated : IF End of Life < = Current Month End Date
+*	Depreciating : IF End of Life > Current Month End Date
+*	Ending Depreciation : IF End of Life is during the Current Month
+*	Fiscal Month : **_manually enter_**
+*	Beg of Life : uses VLOOKUP to determine start of Fiscal Month
+*	End of Life = Beg of Life + (365 * Years)
+*	Years : **_manually enter_**
+*	Weeks = Years * 52
+*	Weeks in service = (Current Fiscal Month – Beg of Life) / 7
+*	Weekly Depreciation = Acquisition Cost / Weeks
+*	Acquisition Cost : **_manually enter_**
+*	Accumulated Depreciation Total: Sum of all YTD depreciation
+*	NBV (Net Book Value) = Acquisition Cost – Accumulated Depreciation Total
 
 ### View Years of Depreciation at a Glance
 
