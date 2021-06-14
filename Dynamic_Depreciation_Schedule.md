@@ -4,6 +4,8 @@ Easily and Accurately Report Depreciation Expense
 
 Compare Monthly & Annual Trends
 
+<a href="https://github.com/ajmercado1229/Dynamic_Depreciation_Schedule/raw/main/Dynamic%20Depreciation%20Schedule.xlsx">Download a copy and follow along!</a>
+
 ---
 
 <img src="images/excel01.PNG?raw=true"/>
