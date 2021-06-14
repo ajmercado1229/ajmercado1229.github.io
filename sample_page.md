@@ -1,6 +1,7 @@
 ## DYNAMIC DEPRECIATION SCHEDULE
 
-**Easily and Accurately Report Depreciation Expense | Compare Monthly & Annual Trends **
+Easily and Accurately Report Depreciation Expense
+Compare Monthly & Annual Trends
 
 **Project description:** This schedule represents a complete list of fixed assets with depreciation scheduled out over time.  The goal was to modify a previously existing Excel file to automate as much of the depreciation schedule as possible. This was accomplished by creating complex formulas that removed the manual calculations previously required to maintain the file.  From this assets can be easily compare over specified months and reporting depreciation expense is made simple.
 
