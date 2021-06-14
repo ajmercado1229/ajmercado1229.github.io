@@ -101,6 +101,7 @@ First, we will discuss the calculations and what-if scenarios that need to be pe
 
 <img src="images/excel10.PNG?raw=true"/>
 
+
 Let’s take this cell for example and see how the formula completes all of the objectives and returns the correct depreciation for the month.
 
 **Original Formula:**
@@ -165,9 +166,13 @@ Now that we are familiar with the calendarized depreciation schedule, we can ret
 
 Once again, let’s break out this formula and see how it works.
 
+---
+
 **Original Formula:**
 
 <img src="images/form08.PNG?raw=true"/>
+
+---
 
 **Dissected:**
 
