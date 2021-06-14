@@ -102,7 +102,7 @@ Let’s take this cell for example and see how the formula completes all of the 
 
 **Original Formula:**
 
-<img src="images/form01.PNG?raw=true"/width="100"> 
+<img src="images/form01.PNG?raw=true" width="100"> 
 
 Despite being a complex formula with many nested functions, if we translate it into plain English and break it up into parts we can see how the logical order of operations accomplishes our end goal.
 
