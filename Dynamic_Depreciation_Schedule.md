@@ -12,17 +12,25 @@ Compare Monthly & Annual Trends
 
 ### Define Current Month
 
+<img src="images/excel02.PNG?raw=true"/>
+
 As a user, the first thing you will want to do is to use the highlighted cell to specify which fiscal month you are reporting for. By clicking on the cell you can choose from the drop-down list. Specifying the month will be used to determine the current depreciation on each asset for that point in time. 
 
 ### Asset Specifications
+
+<img src="images/excel03.PNG?raw=true"/>
 
 Then comes the qualitative aspects of each asset. This will provide information on the type of asset (such as Leasehold Improvement, Machinery and Equipment, etc.). It details the project number, description, location, asset tag number, as well as the main vendor the asset was purchased from.
 
 ### Recording Depreciation to General Ledger Journal
 
+<img src="images/excel04.PNG?raw=true"/>
+
 Next the ledger accounts are listed based on what Financial Statement accounts will be affected by the assets – namely Accumulated Depreciation and Depreciation Expense. These accounts will be referenced via formulas later on in order to automatically generate monthly Depreciation Expense Journals.
 
 ### Asset Life Details
+
+<img src="images/excel05.PNG?raw=true"/>
 
 This part of the schedule holds the quantitative data of the assets. As you can see, only a few fields need to be manually entered when setting up a new asset. This information will be used in the formulas of other fields for calculation.
 
@@ -43,11 +51,17 @@ This part of the schedule holds the quantitative data of the assets. As you can 
 
 ### View Years of Depreciation at a Glance
 
+<img src="images/excel06.PNG?raw=true"/>
+
 Next is the YTD Depreciation portion of the schedule. Through the use of complex nested Excel functions we can visualize year-to-date depreciation over time. In this case, we can see over a decade’s worth of depreciation by year in order to make comparisons and spot trends. For this example the current fiscal month is set to April 2021. Thus FY21 YTD depreciation is through the current month and does not extend past (notice that FY22 is zero). We will visit how this formula works later on.
 
 ### View Individual Month's Depreciation
 
+<img src="images/excel07.PNG?raw=true"/>
+
 Finally, the last portion of the schedule contains the calendarized depreciation. This is the most detailed layout of depreciation expense as it shows you asset depreciation for every month from the date the asset is set up through being fully depreciated.
+
+<img src="images/excel08.PNG?raw=true"/>
 
 From this detailed view you can compare month-over-month, rolling trends as well as getting a solid idea of what future month’s depreciation will look like (less any future additions). You can also visualize when assets are added and others finish depreciating to help understand fluctuations in expense every month.
 
@@ -64,14 +78,17 @@ First, we will discuss the calculations and what-if scenarios that need to be pe
 
 ### Understanding the Monthly Depreciation Formula
 
+<img src="images/excel09.PNG?raw=true"/>
+
 Let’s take this cell for example and see how the formula completes all of the objectives and returns the correct depreciation for the month.
 
 Original Formula:
-=IF($M23<=FP$6,0,IF(AND($M23> FP$6, $M23<=FQ$6),$R23-(SUM(OFFSET($AJ23,0,0,1,MATCH(FP$6,$AJ$6:$GI$6)))),IF($L23> FQ$6,0,(IF($M23> FQ$6,$Q23*FQ$4)))))
+
+<img src="images/excel10.PNG?raw=true"/>
 
 Despite being a complex formula with many nested functions, if we translate it into plain English and break it up into parts we can see how the logical order of operations accomplishes our end goal.
 
-=IF(END OF LIFE DATE<=PRIOR MONTH END DATE,0,IF(AND(END OF LIFE DATE > PRIOR MONTH END DATE, END OF LIFE DATE <=CURRENT MONTH END DATE),ACQUISITION COST-(SUM(OFFSET(START OF SCHEDULE PERIOD,0,0,1,MATCH(PRIOR MONTH END DATE,ALL SCHEDULE PERIODS)))),IF(BEGINNING OF LIFE DATE> CURRENT MONTH END DATE,0,(IF(END OF LIFE DATE > CURRENT MONTH END DATE,WEEKLY DEPRECIATION AMOUNT*NUMBER OF WEEKS IN THE MONTH)))))
+<img src="images/excel11.PNG?raw=true"/>
 
 
 ### Define Current Month
