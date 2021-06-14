@@ -108,7 +108,7 @@ Despite being a complex formula with many nested functions, if we translate it i
 
 <img src="images/form02.PNG?raw=true"/>
 
-**_It is easier to understand if we reintroduce our original questions and dissect the formula into parts:**
+**_It is easier to understand if we reintroduce our original questions and dissect the formula into parts:_**
 
 ---
 
