@@ -1,6 +1,10 @@
-## This can be your internal website page / project page
+## DYNAMIC DEPRECIATION SCHEDULE
 
-**Project description:** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Easily and Accurately Report Depreciation Expense | Compare Monthly & Annual Trends **
+
+**Project description:** This schedule represents a complete list of fixed assets with depreciation scheduled out over time.  The goal was to modify a previously existing Excel file to automate as much of the depreciation schedule as possible. This was accomplished by creating complex formulas that removed the manual calculations previously required to maintain the file.  From this assets can be easily compare over specified months and reporting depreciation expense is made simple.
+
+**Background:** This schedule uses a fictitious company (Fruits & Nuts, Inc.) and its assets to demonstrate its capabilities. The company operates on a fiscal calendar utilzing the 4-4-5 method of accounting. The fiscal year is comprised of 4 quarters with each quarter starting with two 4-week months and ending with a 5-week month. This allows months to be more accurately compared based on the number of weeks in the month despite each calendar month having an unequal amount of days.
 
 ### 1. Suggest hypotheses about the causes of observed phenomena
 
