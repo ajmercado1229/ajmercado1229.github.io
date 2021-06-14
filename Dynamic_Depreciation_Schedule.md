@@ -106,7 +106,7 @@ Let’s take this cell for example and see how the formula completes all of the 
 
 **Original Formula:**
 
-<img src="images/form01.PNG?raw=true" height="100"> 
+<img src="images/form01.PNG?raw=true"/> 
 
 ---
 
