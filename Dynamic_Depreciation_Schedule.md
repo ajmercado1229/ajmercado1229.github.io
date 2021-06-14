@@ -88,8 +88,11 @@ The cells that populate the monthly depreciation section of the schedule utilize
 First, we will discuss the calculations and what-if scenarios that need to be performed at a high level to understand the use of this function.
 
 A)	Has this asset already finished depreciating?
+
 B)	Is this the final month of depreciation?
+
 C)	Has this asset even started depreciating in this month? 
+
 D)	Is this asset currently depreciating this month? If so, is this a 4 or 5 week month?
 
 ---
@@ -104,9 +107,14 @@ Let’s take this cell for example and see how the formula completes all of the 
 
 <img src="images/form01.PNG?raw=true" height="100"> 
 
+---
+
 Despite being a complex formula with many nested functions, if we translate it into plain English and break it up into parts we can see how the logical order of operations accomplishes our end goal.
 
+---
+
 <img src="images/form02.PNG?raw=true"/>
+
 ---
 
 **_It is easier to understand if we reintroduce our original questions and dissect the formula into parts:_**
