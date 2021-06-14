@@ -108,27 +108,37 @@ Despite being a complex formula with many nested functions, if we translate it i
 
 <img src="images/form02.PNG?raw=true"/>
 
-It is easier to understand if we reintroduce our original questions and dissect the formula into parts:
+**_It is easier to understand if we reintroduce our original questions and dissect the formula into parts:**
+
+---
 
 **A) Has this asset already finished depreciating?**
 First of all, let’s test whether the asset in question has finished depreciating already. If the end of life date is less than or equal to the last day of the prior fiscal month, then that means the asset has finished depreciatin and should return a zero for the current month.
 
 <img src="images/form04.PNG?raw=true"/>
 
+---
+
 **B) Is this the final month of depreciation?**
 If the asset fails the first test it will move on to the next test.This part of the formula will test whether the asset is going to finish depreciating in the current period. We can test that by seeing if the end of life date is BOTH greater than the prior month end date AND lesser than or equal to the current month end date (meaning it must fall in between). If this is true, then we are going to finalize the depreciation of this asset by expensing the remaining balance of depreciation. The remaining value of the asset is the original acquisition cost and less all depreciation up until this point (using sum, offset and match).
 
 <img src="images/form05.PNG?raw=true"/>
+
+---
 
 **C) Has this asset even started depreciating in this month?**
 If the asset has failed both prior tests, then we will now test if the asset is even depreciating at all during this month. For example, if you set the current month to April 2021 then nothing from May 2021 should be depreciating. This portion is included so that the formula can remain constant across all months (past, present, future). If the beginning of life date is greater than the current month end date, then return zero because it has not begun depreciating the current month.
 
 <img src="images/form06.PNG?raw=true"/>
 
+---
+
 **D) Is this asset currently depreciating this month? If so, is this a 4 or 5 week month?**
 Lastly, if the asset has failed all other tests then that indicates that it is depreciating through the current month. To reiterate, this means that it is not already fully depreciated, nor a future asset, nor does it end somewhere in the middle of the month. More often than not the assets should fall into this category. The prior tests were merely to test and remove outliers. If an asset is going to depreciate as usual through the month then we need to determine how much depreciation will be booked based on whether the current fiscal period is a 4 or 5 week month. So we will take the weekly expense allocation and multiply it by the number of weeks in the month to get the depreciation expense.
 
 <img src="images/form07.PNG?raw=true"/>
+
+---
 
 By using a multitude of nested IF functions we can create a rather complex all-in-one formula which accounts for the past, present and future to return the correct depreciation amount for the month for a given asset. The beauty of this is that a user of this depreciation schedule does not have to individually test all of these scenarios and then manually calculate depreciation for each asset. Doing so would inevitably result in human error inacuracies. In addition, this formula allows you to easily view how depreciation changes month to month with regards to the length of the month and the status of the asset.
 
