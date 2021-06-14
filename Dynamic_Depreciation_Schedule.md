@@ -1,4 +1,4 @@
-## DYNAMIC DEPRECIATION SCHEDULE
+## Dynamic Depreciation Schedule
 
 Easily and Accurately Report Depreciation Expense
 
