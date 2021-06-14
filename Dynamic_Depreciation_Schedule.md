@@ -44,20 +44,20 @@ Next the ledger accounts are listed based on what Financial Statement accounts w
 
 This part of the schedule holds the quantitative data of the assets. As you can see, only a few fields need to be manually entered when setting up a new asset. This information will be used in the formulas of other fields for calculation.
 
-*	Depreciation Status : uses formula to determine status
-*	Fully Depreciated : IF End of Life < = Current Month End Date
-*	Depreciating : IF End of Life > Current Month End Date
-*	Ending Depreciation : IF End of Life is during the Current Month
-*	Fiscal Month : **_manually enter_**
-*	Beg of Life : uses VLOOKUP to determine start of Fiscal Month
-*	End of Life = Beg of Life + (365 * Years)
-*	Years : **_manually enter_**
-*	Weeks = Years * 52
-*	Weeks in service = (Current Fiscal Month – Beg of Life) / 7
-*	Weekly Depreciation = Acquisition Cost / Weeks
-*	Acquisition Cost : **_manually enter_**
-*	Accumulated Depreciation Total: Sum of all YTD depreciation
-*	NBV (Net Book Value) = Acquisition Cost – Accumulated Depreciation Total
+*	*Depreciation Status* : uses formula to determine status
+*	*Fully Depreciated* : IF End of Life < = Current Month End Date
+*	*Depreciating* : IF End of Life > Current Month End Date
+*	*Ending Depreciation* : IF End of Life is during the Current Month
+*	*Fiscal Month* : **_manually enter_**
+*	*Beg of Life* : uses VLOOKUP to determine start of Fiscal Month
+*	*End of Life* = Beg of Life + (365 * Years)
+*	*Years* : **_manually enter_**
+*	*Weeks* = Years * 52
+*	*Weeks in service* = (Current Fiscal Month – Beg of Life) / 7
+*	*Weekly Depreciation* = Acquisition Cost / Weeks
+*	*Acquisition Cost* : **_manually enter_**
+*	*Accumulated Depreciation Total* : Sum of all YTD depreciation
+*	*NBV (Net Book Value)* = Acquisition Cost – Accumulated Depreciation Total
 
 ---
 
@@ -87,10 +87,10 @@ The cells that populate the monthly depreciation section of the schedule utilize
 
 First, we will discuss the calculations and what-if scenarios that need to be performed at a high level to understand the use of this function.
 
-1.	Has this asset already finished depreciating?
-2.	Is this the final month of depreciation?
-3.	Has this asset even started depreciating in this month? 
-4.	Is this asset currently depreciating this month? If so, is this a 4 or 5 week month?
+A)	Has this asset already finished depreciating?
+B)	Is this the final month of depreciation?
+C)	Has this asset even started depreciating in this month? 
+D)	Is this asset currently depreciating this month? If so, is this a 4 or 5 week month?
 
 ---
 
@@ -100,7 +100,7 @@ First, we will discuss the calculations and what-if scenarios that need to be pe
 
 Let’s take this cell for example and see how the formula completes all of the objectives and returns the correct depreciation for the month.
 
-Original Formula:
+**Original Formula:**
 
 <img src="images/form01.PNG?raw=true"/>
 
@@ -110,22 +110,22 @@ Despite being a complex formula with many nested functions, if we translate it i
 
 It is easier to understand if we reintroduce our original questions and dissect the formula into parts:
 
-1. Has this asset already finished depreciating?
+**A) Has this asset already finished depreciating?**
 First of all, let’s test whether the asset in question has finished depreciating already. If the end of life date is less than or equal to the last day of the prior fiscal month, then that means the asset has finished depreciatin and should return a zero for the current month.
 
 <img src="images/form04.PNG?raw=true"/>
 
-2. Is this the final month of depreciation?
+**B) Is this the final month of depreciation?**
 If the asset fails the first test it will move on to the next test.This part of the formula will test whether the asset is going to finish depreciating in the current period. We can test that by seeing if the end of life date is BOTH greater than the prior month end date AND lesser than or equal to the current month end date (meaning it must fall in between). If this is true, then we are going to finalize the depreciation of this asset by expensing the remaining balance of depreciation. The remaining value of the asset is the original acquisition cost and less all depreciation up until this point (using sum, offset and match).
 
 <img src="images/form05.PNG?raw=true"/>
 
-3. Has this asset even started depreciating in this month? 
+**C) Has this asset even started depreciating in this month?**
 If the asset has failed both prior tests, then we will now test if the asset is even depreciating at all during this month. For example, if you set the current month to April 2021 then nothing from May 2021 should be depreciating. This portion is included so that the formula can remain constant across all months (past, present, future). If the beginning of life date is greater than the current month end date, then return zero because it has not begun depreciating the current month.
 
 <img src="images/form06.PNG?raw=true"/>
 
-4. Is this asset currently depreciating this month? If so, is this a 4 or 5 week month?
+**D) Is this asset currently depreciating this month? If so, is this a 4 or 5 week month?**
 Lastly, if the asset has failed all other tests then that indicates that it is depreciating through the current month. To reiterate, this means that it is not already fully depreciated, nor a future asset, nor does it end somewhere in the middle of the month. More often than not the assets should fall into this category. The prior tests were merely to test and remove outliers. If an asset is going to depreciate as usual through the month then we need to determine how much depreciation will be booked based on whether the current fiscal period is a 4 or 5 week month. So we will take the weekly expense allocation and multiply it by the number of weeks in the month to get the depreciation expense.
 
 <img src="images/form07.PNG?raw=true"/>
@@ -136,17 +136,17 @@ By using a multitude of nested IF functions we can create a rather complex all-i
 
 ### Automating Year-to-Date Depreciation Calculations
 
-PHOTO
+<img src="images/excel17.PNG?raw=true"/>
 
 Now that we are familiar with the calendarized depreciation schedule, we can return to the YTD part of the sheet and examine the calculation used to determine that total. 
 
 Once again, let’s break out this formula and see how it works.
 
-Original Formula:
+**Original Formula:**
 
 <img src="images/form08.PNG?raw=true"/>
 
-Dissected:
+**Dissected:**
 
 <img src="images/form09.PNG?raw=true"/>
 
