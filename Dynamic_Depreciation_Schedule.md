@@ -102,35 +102,33 @@ Let’s take this cell for example and see how the formula completes all of the 
 
 Original Formula:
 
-<img src="images/excel11.PNG?raw=true"/>
+<img src="images/form01.PNG?raw=true"/>
 
 Despite being a complex formula with many nested functions, if we translate it into plain English and break it up into parts we can see how the logical order of operations accomplishes our end goal.
 
-<img src="images/excel12.PNG?raw=true"/>
+<img src="images/form02.PNG?raw=true"/>
 
 It is easier to understand if we reintroduce our original questions and dissect the formula into parts:
 
 1. Has this asset already finished depreciating?
 First of all, let’s test whether the asset in question has finished depreciating already. If the end of life date is less than or equal to the last day of the prior fiscal month, then that means the asset has finished depreciatin and should return a zero for the current month.
 
-PHOTO
+<img src="images/form04.PNG?raw=true"/>
 
 2. Is this the final month of depreciation?
 If the asset fails the first test it will move on to the next test.This part of the formula will test whether the asset is going to finish depreciating in the current period. We can test that by seeing if the end of life date is BOTH greater than the prior month end date AND lesser than or equal to the current month end date (meaning it must fall in between). If this is true, then we are going to finalize the depreciation of this asset by expensing the remaining balance of depreciation. The remaining value of the asset is the original acquisition cost and less all depreciation up until this point (using sum, offset and match).
 
-PHOTO
+<img src="images/form05.PNG?raw=true"/>
 
 3. Has this asset even started depreciating in this month? 
 If the asset has failed both prior tests, then we will now test if the asset is even depreciating at all during this month. For example, if you set the current month to April 2021 then nothing from May 2021 should be depreciating. This portion is included so that the formula can remain constant across all months (past, present, future). If the beginning of life date is greater than the current month end date, then return zero because it has not begun depreciating the current month.
 
-
-PHOTO
+<img src="images/form06.PNG?raw=true"/>
 
 4. Is this asset currently depreciating this month? If so, is this a 4 or 5 week month?
 Lastly, if the asset has failed all other tests then that indicates that it is depreciating through the current month. To reiterate, this means that it is not already fully depreciated, nor a future asset, nor does it end somewhere in the middle of the month. More often than not the assets should fall into this category. The prior tests were merely to test and remove outliers. If an asset is going to depreciate as usual through the month then we need to determine how much depreciation will be booked based on whether the current fiscal period is a 4 or 5 week month. So we will take the weekly expense allocation and multiply it by the number of weeks in the month to get the depreciation expense.
 
-
-PHOTO
+<img src="images/form07.PNG?raw=true"/>
 
 By using a multitude of nested IF functions we can create a rather complex all-in-one formula which accounts for the past, present and future to return the correct depreciation amount for the month for a given asset. The beauty of this is that a user of this depreciation schedule does not have to individually test all of these scenarios and then manually calculate depreciation for each asset. Doing so would inevitably result in human error inacuracies. In addition, this formula allows you to easily view how depreciation changes month to month with regards to the length of the month and the status of the asset.
 
@@ -146,15 +144,15 @@ Once again, let’s break out this formula and see how it works.
 
 Original Formula:
 
-PHOTO
+<img src="images/form08.PNG?raw=true"/>
 
 Dissected:
 
-PHOTO
+<img src="images/form09.PNG?raw=true"/>
 
 If the current month end date is greater than the last day of the fiscal year in question, that means that it has been depreciating over the whole year thus output the sum of the whole year. For example, if the current fiscal year is 2021, then for YTD 2020 give me the sum of all depreciation in 2020. 
 
-PHOTO
+<img src="images/form10.PNG?raw=true"/>
 
 Otherwise, give me the sum of depreciation from the start of the year up until the current month. For example, let’s say the current month is April 2021 and the fiscal year runs from November 2020 – October 2021. In that case, the YTD depreciation is from November ’20 – April ’21.
 
