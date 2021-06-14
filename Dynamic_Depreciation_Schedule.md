@@ -102,21 +102,10 @@ Let’s take this cell for example and see how the formula completes all of the 
 
 **Original Formula:**
 
-```
-=IF($M23<=FP$6,0,IF(AND($M23> FP$6, $M23<=FQ$6),$R23-(SUM(OFFSET($AJ23,0,0,1,MATCH(FP$6,$AJ$6:$GI$6)))),
-IF($L23> FQ$6,0,(IF($M23> FQ$6,$Q23*FQ$4)))))
-```
-
 <img src="images/form01.PNG?raw=true" height="100"> 
 
 Despite being a complex formula with many nested functions, if we translate it into plain English and break it up into parts we can see how the logical order of operations accomplishes our end goal.
 
-```
-=IF(END OF LIFE DATE<=PRIOR MONTH END DATE,0,IF(AND(END OF LIFE DATE > PRIOR MONTH END DATE, 
-END OF LIFE DATE <=CURRENT MONTH END DATE),ACQUISITION COST-(SUM(OFFSET(START OF SCHEDULE PERIOD,
-0,0,1,MATCH(PRIOR MONTH END DATE,ALL SCHEDULE PERIODS)))),IF(BEGINNING OF LIFE DATE> CURRENT MONTH END DATE,
-0,(IF(END OF LIFE DATE > CURRENT MONTH END DATE,WEEKLY DEPRECIATION AMOUNT*NUMBER OF WEEKS IN THE MONTH)))))
-```
 <img src="images/form02.PNG?raw=true"/>
 
 It is easier to understand if we reintroduce our original questions and dissect the formula into parts:
