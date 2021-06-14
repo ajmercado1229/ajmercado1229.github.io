@@ -162,7 +162,7 @@ Otherwise, give me the sum of depreciation from the start of the year up until t
 
 ### Viewing Fixed Asset Totals
 
-<img src="images/excel19.PNG?raw=true"/>
+<img src="images/excel21.PNG?raw=true"/>
 
 At the very bottom of the sheet is a summary view of all categories. This allows for easy comparison to the Depreciation Journals and the General Ledger to ensure that everything ties out completely.
 
@@ -172,4 +172,4 @@ At the very bottom of the sheet is a summary view of all categories. This allows
 
 The second tab of the Fixed Asset Schedule contains the Depreciation Journal to be booked monthly. It utilizes SUMIF, MATCHing and INDEXing to pull the sum of depreciation expense for each ledger account. The total journal can easily be compared to the totals from the schedule to ensure accurate reporting. 
 
-<img src="images/excel20.PNG?raw=true"/>
+<img src="images/excel22.PNG?raw=true"/>
