@@ -63,7 +63,7 @@ This part of the schedule holds the quantitative data of the assets. As you can 
 
 ### 5. View Years of Depreciation at a Glance
 
-<img src="images/excel06.PNG?raw=true"/>
+<img src="images/excel07.PNG?raw=true"/>
 
 Next is the YTD Depreciation portion of the schedule. Through the use of complex nested Excel functions we can visualize year-to-date depreciation over time. In this case, we can see over a decade’s worth of depreciation by year in order to make comparisons and spot trends. For this example the current fiscal month is set to April 2021. Thus FY21 YTD depreciation is through the current month and does not extend past (notice that FY22 is zero). We will visit how this formula works later on.
 
@@ -71,11 +71,11 @@ Next is the YTD Depreciation portion of the schedule. Through the use of complex
 
 ### 6. View Individual Month's Depreciation
 
-<img src="images/excel07.PNG?raw=true"/>
+<img src="images/excel08.PNG?raw=true"/>
 
 Finally, the last portion of the schedule contains the calendarized depreciation. This is the most detailed layout of depreciation expense as it shows you asset depreciation for every month from the date the asset is set up through being fully depreciated.
 
-<img src="images/excel08.PNG?raw=true"/>
+<img src="images/excel09.PNG?raw=true"/>
 
 From this detailed view you can compare month-over-month, rolling trends as well as getting a solid idea of what future month’s depreciation will look like (less any future additions). You can also visualize when assets are added and others finish depreciating to help understand fluctuations in expense every month.
 
@@ -96,17 +96,17 @@ First, we will discuss the calculations and what-if scenarios that need to be pe
 
 ### 8. Understanding the Monthly Depreciation Formula
 
-<img src="images/excel09.PNG?raw=true"/>
+<img src="images/excel10.PNG?raw=true"/>
 
 Let’s take this cell for example and see how the formula completes all of the objectives and returns the correct depreciation for the month.
 
 Original Formula:
 
-<img src="images/excel10.PNG?raw=true"/>
+<img src="images/excel11.PNG?raw=true"/>
 
 Despite being a complex formula with many nested functions, if we translate it into plain English and break it up into parts we can see how the logical order of operations accomplishes our end goal.
 
-<img src="images/excel11.PNG?raw=true"/>
+<img src="images/excel12.PNG?raw=true"/>
 
 ---
 
