@@ -134,7 +134,7 @@ By using a multitude of nested IF functions we can create a rather complex all-i
 
 ---
 
-### Automating Year-to-Date Depreciation Calculations
+### 9. Automating Year-to-Date Depreciation Calculations
 
 <img src="images/excel17.PNG?raw=true"/>
 
@@ -158,7 +158,7 @@ Otherwise, give me the sum of depreciation from the start of the year up until t
 
 ---
 
-### Viewing Fixed Asset Totals
+### 10. Viewing Fixed Asset Totals
 
 <img src="images/excel21.PNG?raw=true"/>
 
@@ -166,7 +166,7 @@ At the very bottom of the sheet is a summary view of all categories. This allows
 
 ---
 
-### Automatically Generated Monthly Depreciation Journal
+### 11. Automatically Generated Monthly Depreciation Journal
 
 The second tab of the Fixed Asset Schedule contains the Depreciation Journal to be booked monthly. It utilizes SUMIF, MATCHing and INDEXing to pull the sum of depreciation expense for each ledger account. The total journal can easily be compared to the totals from the schedule to ensure accurate reporting. 
 
