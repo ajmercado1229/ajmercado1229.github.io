@@ -1,4 +1,4 @@
-## Dynamic Depreciation Schedule
+# Dynamic Depreciation Schedule
 
 Easily and Accurately Report Depreciation Expense
 
@@ -14,7 +14,7 @@ Compare Monthly & Annual Trends
 
 ---
 
-### 1. Define Current Month
+## 1. Define Current Month
 
 <img src="images/excel02.PNG?raw=true"/>
 
@@ -22,7 +22,7 @@ As a user, the first thing you will want to do is to use the highlighted cell to
 
 ---
 
-### 2. Asset Specifications
+## 2. Asset Specifications
 
 <img src="images/excel03.PNG?raw=true"/>
 
@@ -30,7 +30,7 @@ Then comes the qualitative aspects of each asset. This will provide information 
 
 ---
 
-### 3. Recording Depreciation to General Ledger Journal
+## 3. Recording Depreciation to General Ledger Journal
 
 <img src="images/excel04.PNG?raw=true"/>
 
@@ -38,7 +38,7 @@ Next the ledger accounts are listed based on what Financial Statement accounts w
 
 ---
 
-### 4. Asset Life Details
+## 4. Asset Life Details
 
 <img src="images/excel05.PNG?raw=true"/>
 
@@ -61,7 +61,7 @@ This part of the schedule holds the quantitative data of the assets. As you can 
 
 ---
 
-### 5. View Years of Depreciation at a Glance
+## 5. View Years of Depreciation at a Glance
 
 <img src="images/excel07.PNG?raw=true"/>
 
@@ -69,7 +69,7 @@ Next is the YTD Depreciation portion of the schedule. Through the use of complex
 
 ---
 
-### 6. View Individual Month's Depreciation
+## 6. View Individual Month's Depreciation
 
 <img src="images/excel08.PNG?raw=true"/>
 
@@ -81,7 +81,7 @@ From this detailed view you can compare month-over-month, rolling trends as well
 
 ---
 
-### 7. Automating Monthly Depreciation Calculations
+## 7. Automating Monthly Depreciation Calculations
 
 The cells that populate the monthly depreciation section of the schedule utilize the most complicated function of the sheet. The purpose of the function is to calculate a specific asset’s depreciation for a given month while eliminating the possibility for human error otherwise possible with manual, time-consuming calculations. It needed to be developed to handle multiple situations and also be uniform enough to be used throughout this section without the need for alteration for each month/year. 
 
@@ -97,7 +97,7 @@ First, we will discuss the calculations and what-if scenarios that need to be pe
 
 ---
 
-### 8. Understanding the Monthly Depreciation Formula
+## 8. Understanding the Monthly Depreciation Formula
 
 <img src="images/excel10.PNG?raw=true"/>
 
@@ -157,7 +157,7 @@ By using a multitude of nested IF functions we can create a rather complex all-i
 
 ---
 
-### 9. Automating Year-to-Date Depreciation Calculations
+## 9. Automating Year-to-Date Depreciation Calculations
 
 <img src="images/excel17.PNG?raw=true"/>
 
@@ -181,7 +181,7 @@ Otherwise, give me the sum of depreciation from the start of the year up until t
 
 ---
 
-### 10. Viewing Fixed Asset Totals
+## 10. Viewing Fixed Asset Totals
 
 <img src="images/excel21.PNG?raw=true"/>
 
@@ -189,7 +189,7 @@ At the very bottom of the sheet is a summary view of all categories. This allows
 
 ---
 
-### 11. Automatically Generated Monthly Depreciation Journal
+## 11. Automatically Generated Monthly Depreciation Journal
 
 The second tab of the Fixed Asset Schedule contains the Depreciation Journal to be booked monthly. It utilizes SUMIF, MATCHing and INDEXing to pull the sum of depreciation expense for each ledger account. The total journal can easily be compared to the totals from the schedule to ensure accurate reporting. 
 
