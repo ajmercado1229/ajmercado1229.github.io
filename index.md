@@ -10,4 +10,4 @@
 
 ### [COVID 19 Data Querying & Visualization](/COVID_19)
 
-<img src="images/Dynamic Depreciation Schedule.PNG?raw=true"/>
+<img src="images/covid05.PNG?raw=true"/>
