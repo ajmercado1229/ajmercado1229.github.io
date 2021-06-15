@@ -1,9 +1,9 @@
-# COVID_19 Data Querying & Visualization
+# COVID-19 Data Querying & Visualization
 
 LINK TO GITHUB REPOSITORY
 LINK TO TABLEAU PUBLIC
 
-## Querying the COVID 19 Dataset with SQL
+## Querying the COVID-19 Dataset with SQL
 
 ### 1) Initial look at dataset
 
@@ -16,7 +16,7 @@ ORDER BY 3,4
 ```
 ---
 
-### 2) Select only the data that will be used
+### 2) Selecting only the data that will be used
 
 ```
 SELECT location,
@@ -32,8 +32,8 @@ ORDER BY 1,2
 
 ### 3) Total Cases vs Total Deaths
 
--- Shows the likelihood of dying if you contract COVID-19 in your country.
--- In this case, it is set to specify the United States.
+Shows the likelihood of dying if you contract COVID-19 in your country.
+In this case, it is set to specify the United States.
 
 ```
 SELECT location,
@@ -49,8 +49,8 @@ ORDER BY 1,2
 
 ### 4) Total Cases vs Population
 
--- Shows what percentage of the population has contracted COVID-19
--- In this case, it is set to specify the United States.
+Shows what percentage of the population has contracted COVID-19
+In this case, it is set to specify the United States.
 
 ```
 SELECT location,
@@ -88,11 +88,11 @@ WHERE continent IS NOT NULL
 GROUP BY location,
 	 population
 ORDER BY TotalDeathCount DESC
-
--- total_deaths is NVARCHAR so it must be cast as an integer to aggregate it.
--- The location field includes both countries and continents so the where continent is not null line will 
--- ensure that only countries are shown and not continent summaries or duplicate data.
 ```
+
+* total_deaths is NVARCHAR so it must be cast as an integer to aggregate it.
+* The location field includes both countries and continents so the where continent is not null line will ensure that only countries are shown and not continent summaries or duplicate data.
+
 
 ---
 
@@ -290,7 +290,7 @@ ORDER BY TotalDeathCount DESC
 
 
 
-## Visualizing COVID 19 Data in Tableau Public
+## Visualizing COVID-19 Data in Tableau Public
 
 Compare Monthly & Annual Trends
 
