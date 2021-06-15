@@ -282,7 +282,7 @@ Some of the queries performed above will be used to create visualizations in
 
 ### Global Numbers by Date (#8)
 
-<img src="images/covid02.PNG?raw=true"/>
+<img src="images/covid06.PNG?raw=true"/>
 
 ---
 
