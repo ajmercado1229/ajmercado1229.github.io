@@ -271,21 +271,31 @@ The NOT IN code line must be used because otherwise you will have duplicated dat
 
 Some of the queries performed above will be used to create visualizations in Tableau Public
 
+---
+
 ### Countries with the Highest Infection Rate compared to the Population (#5)
 
 <img src="images/covid01.PNG?raw=true"/>
+
+---
 
 ### Global Numbers by Date (#8)
 
 <img src="images/covid02.PNG?raw=true"/>
 
+---
+
 ### Infection Rates Over Time by Country (#14)
 
 <img src="images/covid03.PNG?raw=true"/>
 
+---
+
 ### Total Deaths per Continent (#15)
 
 <img src="images/covid04.PNG?raw=true"/>
+
+---
 
 ## COVID-19 Dashboard
 
