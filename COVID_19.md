@@ -1,7 +1,8 @@
 # COVID-19 Data Querying & Visualization
 
-LINK TO GITHUB REPOSITORY
-LINK TO TABLEAU PUBLIC
+<a href="https://github.com/ajmercado1229/COVID19_Project.git">View original files in Github</a>
+
+<a href="https://public.tableau.com/views/COVIDVisualization_16226608667290/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link">View the Dashboard on Tableau Public</a>
 
 ## Querying the COVID-19 Dataset with SQL
 
@@ -269,8 +270,8 @@ The NOT IN code line must be used because otherwise you will have duplicated dat
 
 ## Visualizing COVID-19 Data in Tableau Public
 
-Some of the queries performed above will be used to create visualizations in Tableau Public
-
+Some of the queries performed above will be used to create visualizations in 
+<a href="https://public.tableau.com/views/COVIDVisualization_16226608667290/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link">Tableau Public</a>
 ---
 
 ### Countries with the Highest Infection Rate compared to the Population (#5)
