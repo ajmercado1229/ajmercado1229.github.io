@@ -273,7 +273,7 @@ Some of the queries performed above will be used to create visualizations in Tab
 
 ### Countries with the Highest Infection Rate compared to the Population (#5)
 
-PHOTO
+images/covid01.PNG
 
 ### Global Numbers by Date (#8)
 
