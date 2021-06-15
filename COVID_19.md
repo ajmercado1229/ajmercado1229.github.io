@@ -273,23 +273,24 @@ Some of the queries performed above will be used to create visualizations in Tab
 
 ### Countries with the Highest Infection Rate compared to the Population (#5)
 
-
+PHOTO
 
 ### Global Numbers by Date (#8)
 
-
+PHOTO
 
 ### Infection Rates Over Time by Country (#14)
 
-
+PHOTO
 
 ### Total Deaths per Continent (#15)
 
+PHOTO
 
 ## COVID-19 Dashboard
 
-The 
+The visualizations can be conveniently combined to form a single interactive dashboard. From here you are able to toggle different filters to view various stats. 
 
-<img src="images/excel01.PNG?raw=true"/>
+PHOTO
 
-**Project description:** 
+As demonstrated, a large and complex dataset can be transformed with SQL and Tableau into an easily understandable and interactive dashboard.
