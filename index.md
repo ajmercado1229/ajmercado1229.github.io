@@ -10,7 +10,7 @@
 
 ---
 
-### [COVID 19 Data Querying & Visualization](/COVID_19)
+### [COVID-19 Data Querying & Visualization](/COVID_19)
 
 
 #### SQL, Tableau
