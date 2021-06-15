@@ -7,3 +7,7 @@
 <img src="images/Dynamic Depreciation Schedule.PNG?raw=true"/>
 
 ---
+
+### [COVID 19 Data Querying & Visualization](/COVID_19)
+
+<img src="images/Dynamic Depreciation Schedule.PNG?raw=true"/>
