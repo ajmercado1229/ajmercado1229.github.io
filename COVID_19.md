@@ -82,6 +82,20 @@ FROM PortfolioProject.dbo.CovidDeaths
 GROUP BY Location, Population, date
 ORDER BY PercentPopulationInfected DESC
 ```
+
+We can use this query to view the changing infection rates over time by country to evaluate which countries are becoming more highly infected and which countries are doing a better job at containing the virus.
+
+
+<img src="images/covid04.PNG?raw=true"/>
+
+---
+
+## COVID-19 Dashboard
+
+The visualizations can be conveniently combined to form a single interactive dashboard. From here you are able to toggle different filters to view various stats. 
+
+<img src="images/covid05.PNG?raw=true"/>
+
 ---
 
 
@@ -281,34 +295,8 @@ Some of the queries performed above will be used to create visualizations in
 <a href="https://public.tableau.com/views/COVIDVisualization_16226608667290/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link">Tableau Public</a>
 ---
 
-### Countries with the Highest Infection Rate compared to the Population (#5)
 
 
 
----
-
-### Global Numbers by Date (#8)
-
-
-
----
-
-### Infection Rates Over Time by Country (#14)
-
-
-
----
-
-### Total Deaths per Continent (#15)
-
-<img src="images/covid04.PNG?raw=true"/>
-
----
-
-## COVID-19 Dashboard
-
-The visualizations can be conveniently combined to form a single interactive dashboard. From here you are able to toggle different filters to view various stats. 
-
-<img src="images/covid05.PNG?raw=true"/>
 
 As demonstrated, a large and complex dataset can be transformed with SQL and Tableau into an easily understandable and interactive dashboard.
