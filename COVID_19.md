@@ -11,7 +11,7 @@ Microsoft SQL Server & Tableau Public
 
 ---
 
-### 9) Global Numbers Total
+### Global Numbers Total
 
 ```sql
 SELECT SUM(new_cases) AS TotalCases,
@@ -29,9 +29,9 @@ This query will return results showing the Total Cases globally as well as the T
 
 ---
 
-### 15) Total Deaths per Continent
+### Total Deaths per Continent
 
-```
+```sql
 SELECT location, 
        SUM(cast(new_deaths as int)) as TotalDeathCount
 FROM PortfolioProject.dbo.CovidDeaths
@@ -48,9 +48,9 @@ This query returns the Total Death numbers per continent. Some locations must be
 
 ---
 
-### 5) Countries with the Highest Infection Rate compared to the Population.
+### Countries with the Highest Infection Rate compared to the Population.
 
-```
+```sql
 SELECT location,
 	   population,
 	   MAX(total_cases) AS HighestInfectionCount,
@@ -68,9 +68,9 @@ From the dataset we can inquire about the populations and highest total cases pe
 
 ---
 
-### 14) Infection Rates Over Time by Country
+### Infection Rates Over Time by Country
 
-```
+```sql
 SELECT Location, 
        Population,
        date, 
