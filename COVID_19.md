@@ -88,9 +88,10 @@ We can use this query to view the changing infection rates over time by country 
 
 ---
 
-## COVID-19 Dashboard
+### COVID-19 Dashboard
 
 The visualizations can be conveniently combined to form a single interactive dashboard. From here you are able to toggle different filters to view various stats. 
+
 
 <img src="images/covid05.PNG?raw=true"/>
 
@@ -100,12 +101,12 @@ The visualizations can be conveniently combined to form a single interactive das
 
 ---
 
-### 3) Total Cases vs Total Deaths
+### Total Cases vs Total Deaths
 
 Shows the likelihood of dying if you contract COVID-19 in your country.
 In this case, it is set to specify the United States.
 
-```
+```sql
 SELECT location,
 	   date,
 	   total_cases,
@@ -115,14 +116,15 @@ FROM PortfolioProject.dbo.CovidDeaths
 WHERE location like '%states%'
 ORDER BY 1,2
 ```
+
 ---
 
-### 4) Total Cases vs Population
+### Total Cases vs Population
 
 Shows what percentage of the population has contracted COVID-19
 In this case, it is set to specify the United States.
 
-```
+```sql
 SELECT location,
 	   date,
 	   population,
@@ -132,13 +134,12 @@ FROM PortfolioProject.dbo.CovidDeaths
 WHERE location like '%states%'
 ORDER BY 1,2
 ```
+
 ---
 
+### Countries with Highest Death Count per Population
 
-
-### 6) Countries with Highest Death Count per Population
-
-```
+```sql
 SELECT location,
 	   MAX(CAST(total_deaths AS INT)) AS TotalDeathCount
 FROM PortfolioProject.dbo.CovidDeaths
@@ -151,24 +152,13 @@ ORDER BY TotalDeathCount DESC
 * total_deaths is NVARCHAR so it must be cast as an integer to aggregate it.
 * The location field includes both countries and continents so the where continent is not null line will ensure that only countries are shown and not continent summaries or duplicate data.
 
-
 ---
 
-### 7) Continents with Highest Death Count per Population
+### Global Numbers by Date 
 
-```
-SELECT location,
-	   MAX(CAST(total_deaths AS INT)) AS TotalDeathCount
-FROM PortfolioProject.dbo.CovidDeaths
-WHERE continent IS NULL
-GROUP BY location
-ORDER BY TotalDeathCount DESC
-```
----
+Shows the global number of cases and deaths over time.
 
-### 8) Global Numbers by Date 
-
-```
+```sql
 SELECT date,
 	   SUM(new_cases) AS TotalCases,
 	   SUM(CAST(new_deaths AS INT)) AS TotalDeaths,
@@ -178,13 +168,14 @@ WHERE continent IS NOT NULL
 GROUP BY date
 ORDER BY 1,2
 ```
+
 ---
 
+### Total Population vs Vaccination
 
+Shows a rolling number of people vaccinated per country.
 
-### 10) Total Population vs Vaccination
-
-```
+```sql
 SELECT DEA.continent,
 	   DEA.location,
 	   DEA.date,
@@ -199,75 +190,13 @@ JOIN PortfolioProject.dbo.CovidVaccinations AS VAC
 WHERE DEA.continent IS NOT NULL
 ORDER BY 2,3
 ```
+
 ---
 
-### 11) Total Population vs Vaccination CTE (common table expression): allows it to be referenced later.
+### Current Death Percentage by Country
 
-
-```
-WITH PopVsVac (Continent, Location, Date, Population, New_Vaccinations, RollingPeopleVaccinated)
-AS
-(
-SELECT DEA.continent,
-	   DEA.location,
-	   DEA.date,
-	   DEA.population,
-	   VAC.new_vaccinations,
-	   SUM(CAST(VAC.new_vaccinations AS INT)) 
-			OVER (PARTITION BY DEA.location ORDER BY DEA.location, DEA.date) AS RollingPeopleVaccinated
-FROM PortfolioProject.dbo.CovidDeaths AS DEA
-JOIN PortfolioProject.dbo.CovidVaccinations AS VAC
-	ON DEA.location = VAC.location
-	AND DEA.date = VAC.date
-WHERE DEA.continent IS NOT NULL
-)
-
-SELECT *,
-	   (RollingPeopleVaccinated/Population)*100 AS PercentOfPopulationVaccinated
-FROM PopVsVac
-WHERE Location = 'United States'
-```
----
-
-### 12) Total Population vs Vaccination Temp Table
-
-```
-DROP TABLE IF EXISTS #PercentPopulationVaccinated
-
-CREATE TABLE #PercentPopulationVaccinated
-(
-Continent NVARCHAR(255),
-Location NVARCHAR(255),
-Date datetime,
-Population numeric,
-New_vaccinations numeric,
-RollingPeopleVaccinated numeric
-)
-
-INSERT INTO #PercentPopulationVaccinated
-SELECT DEA.continent,
-	   DEA.location,
-	   DEA.date,
-	   DEA.population,
-	   VAC.new_vaccinations,
-	   SUM(CAST(VAC.new_vaccinations AS INT)) 
-			OVER (PARTITION BY DEA.location ORDER BY DEA.location, DEA.date) AS RollingPeopleVaccinated
-FROM PortfolioProject.dbo.CovidDeaths AS DEA
-JOIN PortfolioProject.dbo.CovidVaccinations AS VAC
-	ON DEA.location = VAC.location
-	AND DEA.date = VAC.date
-WHERE DEA.continent IS NOT NULL
-
-
-SELECT *,
-	   (RollingPeopleVaccinated/Population)*100
-FROM #PercentPopulationVaccinated
-```
----
-
-### 13) Current Death Percentage by Country
-
-```
+Shows the current death percentage by country. In this case the dataset extends until May 12th, 2021 but going forward data could be updated and the query would remain functional.
+```sql
 SELECT B.location,
 	   B.date,
 	   B.total_cases,
@@ -284,20 +213,3 @@ AND B.date = A.MaxDate
 WHERE continent IS NOT NULL
 ORDER BY location
 ```
----
-
-
-
-
-
-## Visualizing COVID-19 Data in Tableau Public
-
-Some of the queries performed above will be used to create visualizations in 
-<a href="https://public.tableau.com/views/COVIDVisualization_16226608667290/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link">Tableau Public</a>
----
-
-
-
-
-
-As demonstrated, a large and complex dataset can be transformed with SQL and Tableau into an easily understandable and interactive dashboard.
