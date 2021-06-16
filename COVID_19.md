@@ -13,7 +13,7 @@ Microsoft SQL Server & Tableau Public
 
 ### 9) Global Numbers Total
 
-```
+```sql
 SELECT SUM(new_cases) AS TotalCases,
 	   SUM(CAST(new_deaths AS INT)) AS TotalDeaths,
 	   (SUM(CAST(new_deaths AS INT))/SUM(new_cases))*100 AS DeathPercentage
@@ -96,6 +96,9 @@ The visualizations can be conveniently combined to form a single interactive das
 
 ---
 
+## Bonus Queries for Analysis
+
+---
 
 ### 3) Total Cases vs Total Deaths
 
