@@ -13,8 +13,6 @@ Microsoft SQL Server & Tableau Public
 
 ### 9) Global Numbers Total
 
-Shows the total number of cases & deaths globally.
-
 ```
 SELECT SUM(new_cases) AS TotalCases,
 	   SUM(CAST(new_deaths AS INT)) AS TotalDeaths,
@@ -23,6 +21,7 @@ FROM PortfolioProject.dbo.CovidDeaths
 WHERE continent IS NOT NULL
 ORDER BY 1,2
 ```
+
 
 This query will return results showing the Total Cases globally as well as the Total Deaths. From there you can derive the Total Death Percentage. The results can be uploaded via Excel into Tableau Public for visualization.
 
