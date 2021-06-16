@@ -4,7 +4,7 @@ Analysis on publicly available COVID-19 data through May 12, 2021.
 
 <a href="https://github.com/ajmercado1229/COVID19_Project.git">View original files in Github</a>
 
-<a href="https://public.tableau.com/views/Book1_16217027246220/Sheet2?:language=en-US&:display_count=n&:origin=viz_share_link">View the Dashboard on Tableau Public</a>
+<a href="https://public.tableau.com/views/COVIDVisualization_16226608667290/Dashboard1?:language=en-US&:retry=yes&:display_count=n&:origin=viz_share_link">View the Dashboard on Tableau Public</a>
 
 ## Querying & Visualization
 Microsoft SQL Server & Tableau Public
