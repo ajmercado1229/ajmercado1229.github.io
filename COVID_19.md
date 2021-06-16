@@ -81,7 +81,7 @@ GROUP BY Location, Population, date
 ORDER BY PercentPopulationInfected DESC
 ```
 
-We can use this query to view the changing infection rates over time by country to evaluate which countries are becoming more highly infected and which countries are doing a better job at containing the virus.
+We can use this query to view the changing infection rates over time by country to evaluate which countries are becoming more highly infected and which countries are doing a better job at containing the virus. This visualization has been filtered to only show certain countries, but it can be changed to include any country within the dataset. Tableau also has a great forecasting tool to predict future results based on past patterns and data. This dataset includes dates up until May 12th, 2021 and Tableau can show estimates through the end of 2021.
 
 
 <img src="images/covid04.PNG?raw=true"/>
