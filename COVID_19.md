@@ -26,6 +26,7 @@ ORDER BY 1,2
 
 This query will return results showing the Total Cases globally as well as the Total Deaths. From there you can derive the Total Death Percentage. The results can be uploaded via Excel into Tableau Public for visualization.
 
+
 <img src="images/covid01.PNG?raw=true"/>
 
 ---
@@ -43,6 +44,7 @@ ORDER BY TotalDeathCount DESC
 ```
 
 This query returns the Total Death numbers per continent. Some locations must be excluded because they are either subtotals or totals and would duplicate some of the data.
+
 
 <img src="images/covid06.PNG?raw=true"/>
 
@@ -62,6 +64,7 @@ ORDER BY PopulationPercentageInfected DESC
 ```
 
 From the dataset we can inquire about the populations and highest total cases per country and be able to create a new field called PopulationPercentageInfected. We can import the results into Tableau and create a map showing highest infection rates across the world.
+
 
 <img src="images/covid03.PNG?raw=true"/>
 
