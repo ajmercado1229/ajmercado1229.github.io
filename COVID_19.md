@@ -1,35 +1,86 @@
-# COVID-19 Data Querying & Visualization
+# COVID-19 Dataset Analysis
+
+Analysis on publicly available COVID-19 data through May 12, 2021.
 
 <a href="https://github.com/ajmercado1229/COVID19_Project.git">View original files in Github</a>
 
 <a href="https://public.tableau.com/views/COVIDVisualization_16226608667290/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link">View the Dashboard on Tableau Public</a>
 
-## Querying the COVID-19 Dataset with SQL
+## Querying & Visualization
+Microsoft SQL Server & Tableau Public
 
-### 1) Initial look at dataset
-
-```
-SELECT * FROM PortfolioProject.dbo.CovidDeaths
-ORDER BY 3,4
-
-SELECT * FROM PortfolioProject.dbo.CovidVaccinations
-ORDER BY 3,4
-```
 ---
 
-### 2) Selecting only the data that will be used
+### 9) Global Numbers Total
+
+Shows the total number of cases & deaths globally.
+
+```
+SELECT SUM(new_cases) AS TotalCases,
+	   SUM(CAST(new_deaths AS INT)) AS TotalDeaths,
+	   (SUM(CAST(new_deaths AS INT))/SUM(new_cases))*100 AS DeathPercentage
+FROM PortfolioProject.dbo.CovidDeaths
+WHERE continent IS NOT NULL
+ORDER BY 1,2
+```
+
+This query will return results showing the Total Cases globally as well as the Total Deaths. From there you can derive the Total Death Percentage. The results can be uploaded via Excel into Tableau Public for visualization.
+
+<img src="images/covid01.PNG?raw=true"/>
+
+---
+
+### 15) Total Deaths per Continent
+
+```
+SELECT location, 
+       SUM(cast(new_deaths as int)) as TotalDeathCount
+FROM PortfolioProject.dbo.CovidDeaths
+WHERE continent IS NULL 
+AND location NOT IN ('World', 'European Union', 'International')
+GROUP BY location
+ORDER BY TotalDeathCount DESC
+```
+
+This query returns the Total Death numbers per continent. Some locations must be excluded because they are either subtotals or totals and would duplicate some of the data.
+
+<img src="images/covid06.PNG?raw=true"/>
+
+---
+
+### 5) Countries with the Highest Infection Rate compared to the Population.
 
 ```
 SELECT location,
-	   date,
-	   total_cases,
-	   new_cases,
-	   total_deaths,
-	   population
+	   population,
+	   MAX(total_cases) AS HighestInfectionCount,
+	   MAX((total_cases/population))*100 AS PopulationPercentageInfected
 FROM PortfolioProject.dbo.CovidDeaths
-ORDER BY 1,2
+GROUP BY location,
+	 population
+ORDER BY PopulationPercentageInfected DESC
+```
+
+From the dataset we can inquire about the populations and highest total cases per country and be able to create a new field called PopulationPercentageInfected. We can import the results into Tableau and create a map showing highest infection rates across the world.
+
+<img src="images/covid03.PNG?raw=true"/>
+
+---
+
+### 14) Infection Rates Over Time by Country
+
+```
+SELECT Location, 
+       Population,
+       date, 
+       MAX(total_cases) as HighestInfectionCount,  
+       MAX((total_cases/population))*100 as PercentPopulationInfected
+FROM PortfolioProject.dbo.CovidDeaths
+GROUP BY Location, Population, date
+ORDER BY PercentPopulationInfected DESC
 ```
 ---
+
 
 ### 3) Total Cases vs Total Deaths
 
@@ -65,19 +116,7 @@ ORDER BY 1,2
 ```
 ---
 
-### 5) Countries with the Highest Infection Rate compared to the Population.
 
-```
-SELECT location,
-	   population,
-	   MAX(total_cases) AS HighestInfectionCount,
-	   MAX((total_cases/population))*100 AS PopulationPercentageInfected
-FROM PortfolioProject.dbo.CovidDeaths
-GROUP BY location,
-	 population
-ORDER BY PopulationPercentageInfected DESC
-```
----
 
 ### 6) Countries with Highest Death Count per Population
 
@@ -123,17 +162,7 @@ ORDER BY 1,2
 ```
 ---
 
-### 9) Global Numbers Total
 
-```
-SELECT SUM(new_cases) AS TotalCases,
-	   SUM(CAST(new_deaths AS INT)) AS TotalDeaths,
-	   (SUM(CAST(new_deaths AS INT))/SUM(new_cases))*100 AS DeathPercentage
-FROM PortfolioProject.dbo.CovidDeaths
-WHERE continent IS NOT NULL
-ORDER BY 1,2
-```
----
 
 ### 10) Total Population vs Vaccination
 
@@ -239,34 +268,9 @@ ORDER BY location
 ```
 ---
 
-### 14) Infection Rates Over Time by Country
 
-```
-SELECT Location, 
-       Population,
-       date, 
-       MAX(total_cases) as HighestInfectionCount,  
-       MAX((total_cases/population))*100 as PercentPopulationInfected
-FROM PortfolioProject.dbo.CovidDeaths
-GROUP BY Location, Population, date
-ORDER BY PercentPopulationInfected DESC
-```
----
 
-### 15) Total Deaths per Continent
 
-```
-SELECT location, 
-       SUM(cast(new_deaths as int)) as TotalDeathCount
-FROM PortfolioProject.dbo.CovidDeaths
-WHERE continent IS NULL 
-AND location NOT IN ('World', 'European Union', 'International')
-GROUP BY location
-ORDER BY TotalDeathCount DESC
-```
-The NOT IN code line must be used because otherwise you will have duplicated data.
-
----
 
 ## Visualizing COVID-19 Data in Tableau Public
 
@@ -276,19 +280,19 @@ Some of the queries performed above will be used to create visualizations in
 
 ### Countries with the Highest Infection Rate compared to the Population (#5)
 
-<img src="images/covid01.PNG?raw=true"/>
+
 
 ---
 
 ### Global Numbers by Date (#8)
 
-<img src="images/covid06.PNG?raw=true"/>
+
 
 ---
 
 ### Infection Rates Over Time by Country (#14)
 
-<img src="images/covid03.PNG?raw=true"/>
+
 
 ---
 
