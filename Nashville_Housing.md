@@ -4,7 +4,7 @@ Not all data comes in a nice and neat format. Many times datasets include errone
 This dataset includes information on Nashville housing data from January 2013 - October 2016. Here are some queries that will help cleanse the data to make it more usable for future projects.
 
 
-<a href="https://github.com/ajmercado1229/Nashville_Housing/raw/main/Nashville%20Housing%20Data%20for%20Data%20Cleaning.xlsx">Download a copy and follow along!</a>
+<a href="https://github.com/ajmercado1229/Nashville_Housing/raw/main/Nashville%20Housing%20Data%20for%20Data%20Cleaning.xlsx">Download Original Data</a>
 
 ---
 
