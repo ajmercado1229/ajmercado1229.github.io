@@ -6,7 +6,7 @@ Analysis on publicly available COVID-19 data through May 12, 2021.
 
 <a href="https://public.tableau.com/views/COVIDVisualization_16226608667290/Dashboard1?:language=en-US&:retry=yes&:display_count=n&:origin=viz_share_link">View the Dashboard on Tableau Public</a>
 
-**_Tableau Public link currently not working on Safari / iPhones due to a bug. Link works fine on desktop!
+**_Tableau Public link currently not working on Safari / iPhones due to a bug. Link works fine on desktop!_**
 
 ## Querying & Visualization
 Microsoft SQL Server & Tableau Public
