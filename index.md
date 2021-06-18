@@ -22,4 +22,4 @@
 
 
 #### SQL
-<img src="images/covid05.PNG?raw=true"/>
+<img src="images/Capture.PNG?raw=true"/>
